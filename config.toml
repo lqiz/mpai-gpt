@@ -1,0 +1,29 @@
+
+[db]
+# 如果不进行限制额度操作，可以直接删除数据库相关内容。
+datasource = ""     # mysql的连接,[用户名]:[密码]@tcp([数据库地址]:[端口])/[需要连接的数据库]?其他参数
+
+
+[remoteProxy]
+# 小鸮公众号，使用了代理及key池。 如果不需要就直接用openai 的go库就可以，配置上自己的 key。
+url="http://xxx/v1"
+
+
+# 监听本地的端口
+[listen]
+port=":8080"
+
+# 使用redis来存放access_token，可以用内存来
+[redis]
+host="r-xxxx.redis.rds.aliyuncs.com:6379"
+password="xxxx"
+database=1
+MaxActive=8
+MaxIdle=8
+IdleTimeout=120
+
+# 微信公众号相关配置
+[officialAccountConfig]
+appID="xxxxxxxxxxxxxxxx"
+appSecret="xxxxxxxxxxxxxxxx"
+token="xxx"
